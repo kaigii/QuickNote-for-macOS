@@ -1,0 +1,46 @@
+{
+  "new_tab": "新增分頁",
+  "editor_placeholder": "開始輸入...",
+  "status_bar": {
+    "cursor_pos": "第 {{line}} 行，第 {{col}} 欄",
+    "character_count": "字元數: {{count}}",
+    "encoding": "UTF-8",
+    "file_format": "純文字",
+    "characters": "字元",
+    "line": "行",
+    "column": "列"
+  },
+  "tab": {
+    "untitled_prefix": "未命名"
+  },
+  "tabBar": {
+    "newTab": "新增分頁",
+    "toggleTheme": "切換主題"
+  },
+  "editor": {
+    "placeholder": "開始輸入...",
+    "noTabMessage": "建立新筆記或開啟檔案以開始。"
+  },
+  "tabs": {
+    "untitled": "未命名"
+  },
+  "settings": {
+    "title": "設定",
+    "theme": "主題",
+    "themeLight": "淺色",
+    "themeDark": "深色",
+    "language": "語言",
+    "defaultFormat": "預設格式",
+    "defaultPath": "預設路徑",
+    "defaultPathPlaceholder": "輸入預設儲存路徑...",
+    "newNoteShortcut": "新增分頁快捷鍵",
+    "newNoteShortcutPlaceholder": "輸入新增分頁的快捷鍵...",
+    "closeTabShortcut": "關閉分頁快捷鍵",
+    "closeTabShortcutPlaceholder": "輸入關閉分頁的快捷鍵...",
+    "toggleWindowShortcut": "顯示/隱藏視窗快捷鍵",
+    "toggleWindowShortcutPlaceholder": "輸入顯示/隱藏視窗的快捷鍵...",
+    "browse": "瀏覽",
+    "resetToDefaults": "重設為預設值",
+    "save": "儲存"
+  }
+}

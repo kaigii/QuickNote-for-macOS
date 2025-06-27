@@ -1,0 +1,46 @@
+{
+  "new_tab": "New Tab",
+  "editor_placeholder": "Start typing...",
+  "status_bar": {
+    "cursor_pos": "Ln {{line}}, Col {{col}}",
+    "character_count": "Characters: {{count}}",
+    "encoding": "UTF-8",
+    "file_format": "Plain Text",
+    "characters": "Chars",
+    "line": "Ln",
+    "column": "Col"
+  },
+  "tab": {
+    "untitled_prefix": "Untitled"
+  },
+  "tabBar": {
+    "newTab": "New Tab",
+    "toggleTheme": "Toggle Theme"
+  },
+  "editor": {
+    "placeholder": "Start typing...",
+    "noTabMessage": "Create a new note or open a file to get started."
+  },
+  "tabs": {
+    "untitled": "Untitled"
+  },
+  "settings": {
+    "title": "Settings",
+    "theme": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "language": "Language",
+    "defaultFormat": "Default Format",
+    "defaultPath": "Default Path",
+    "defaultPathPlaceholder": "Enter default save path...",
+    "newNoteShortcut": "New Note Shortcut",
+    "newNoteShortcutPlaceholder": "Enter new note shortcut...",
+    "closeTabShortcut": "Close Tab Shortcut",
+    "closeTabShortcutPlaceholder": "Enter close tab shortcut...",
+    "toggleWindowShortcut": "Show/Hide Window Shortcut",
+    "toggleWindowShortcutPlaceholder": "Enter show/hide window shortcut...",
+    "browse": "Browse",
+    "resetToDefaults": "Reset to Defaults",
+    "save": "Save"
+  }
+}

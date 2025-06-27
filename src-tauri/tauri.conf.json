@@ -1,0 +1,74 @@
+{
+  "$schema": "https://tauri.app/schema.json",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "QuickNote",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "fs": {
+        "all": false,
+        "readFile": true,
+        "writeFile": true,
+        "scope": ["**"]
+      },
+      "window": {
+        "all": false,
+        "close": true,
+        "hide": true,
+        "show": true,
+        "maximize": true,
+        "minimize": true,
+        "unmaximize": true,
+        "unminimize": true,
+        "startDragging": true,
+        "setFullscreen": true
+      },
+      "dialog": {
+        "all": true
+      },
+      "globalShortcut": {
+        "all": true
+      },
+      "shell": {
+        "all": false,
+        "open": true
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+      "identifier": "com.kaigii.quicknote",
+    "icon": [
+        "icons/512x512.png"
+    ]
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": true,
+        "title": "QuickNote",
+        "width": 800,
+        "height": 600,
+        "decorations": false,
+        "transparent": true,
+        "hiddenTitle": true
+      }
+    ],
+    "systemTray": {
+      "iconPath": "../public/icon_tray_menu.png",
+      "iconAsTemplate": true
+    },
+    "macOSPrivateApi": true
+  }
+}
