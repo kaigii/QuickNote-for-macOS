@@ -12,10 +12,17 @@
 
 ### ✨ **QuickNote 實際操作**
 
-*(建議您在此處放置一個展示應用程式功能的 GIF 動畫，例如：主題切換、建立新筆記、自訂快捷鍵等)*
+**深色主題**
+![QuickNote Dark Theme](https://github.com/user-attachments/assets/27a36411-048e-4f71-b339-1c85b1eda738)
 
-![QuickNote Demo](https://user-images.githubusercontent.com/.../placeholder.gif) 
-> *請替換成您應用程式的 GIF 動畫。*
+**淺色主題**
+![QuickNote Light Theme](https://github.com/user-attachments/assets/6c5bb556-3701-46e8-8cc3-5a476a1accf1)
+
+**設定面板（深色）**
+![QuickNote Settings Dark](https://github.com/user-attachments/assets/355d944b-36b7-40d5-9959-40ca30dc9370)
+
+**設定面板（淺色）**
+![QuickNote Settings Light](https://github.com/user-attachments/assets/8eda5e60-601d-467c-8861-0eb536d9e58c)
 
 ---
 
