@@ -18,10 +18,17 @@
 
 ### ✨ **QuickNote in Action**
 
-*(Put a GIF demo of your app here, e.g., theme switching, new note, custom hotkeys, etc.)*
+**Dark Theme**
+![QuickNote Dark Theme](https://github.com/user-attachments/assets/27a36411-048e-4f71-b339-1c85b1eda738)
 
-![QuickNote Demo](https://user-images.githubusercontent.com/.../placeholder.gif) 
-> *Replace this with a GIF of your application.*
+**Light Theme**
+![QuickNote Light Theme](https://github.com/user-attachments/assets/6c5bb556-3701-46e8-8cc3-5a476a1accf1)
+
+**Settings Panel**
+![QuickNote Settings 1](https://github.com/user-attachments/assets/355d944b-36b7-40d5-9959-40ca30dc9370)
+
+**Settings Panel**
+![QuickNote Settings 2](https://github.com/user-attachments/assets/8eda5e60-601d-467c-8861-0eb536d9e58c)
 
 ---
 
