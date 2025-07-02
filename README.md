@@ -1,6 +1,6 @@
 <div align="center">
 
-# QuickNote
+# QuickNote for macOS
 
 [繁體中文](./README.zh-TW.md)
 
@@ -10,7 +10,7 @@
 ![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?logo=vue.js&logoColor=white)
 ![Rust](https://img.shields.io/badge/Rust-DEA584?logo=rust&logoColor=white)
 
-**A simple, fast, and lightweight note-taking application designed for quick access and ease of use.**
+**A simple, fast, and lightweight note-taking application for macOS, designed for quick access and ease of use.**
 
 </div>
 

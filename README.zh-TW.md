@@ -1,10 +1,10 @@
 <div align="center">
 
-# QuickNote (繁體中文版本)
+# QuickNote for macOS（繁體中文版）
 
 [English](./README.md)
 
-**一款為快速存取與簡易使用而設計的、簡單且輕量的筆記應用程式。**
+**一款專為 macOS 設計，快速存取與簡易使用的輕量級筆記應用程式。**
 
 </div>
 
