@@ -1,3 +1,5 @@
+use std::thread;
+use std::time::Duration;
 use tauri::GlobalShortcutManager;
 use tauri::{AppHandle, Manager};
 
@@ -21,7 +23,18 @@ pub fn register_new_note_shortcut(app: &AppHandle, shortcut_str: &str) {
 
     let shortcut = shortcut_str.to_string();
     match shortcut_manager.register(&shortcut, move || {
+        let _ = main_window.hide();
+        let _ = main_window.show();
+        let _ = main_window.set_focus();
         let _ = main_window.emit("shortcut-new-note", ());
+        let _ = main_window.set_always_on_top(true);
+        thread::spawn({
+            let main_window = main_window.clone();
+            move || {
+                thread::sleep(Duration::from_millis(1000));
+                let _ = main_window.set_always_on_top(false);
+            }
+        });
     }) {
         Ok(_) => println!("Successfully registered shortcut: {}", shortcut),
         Err(e) => eprintln!("Failed to register shortcut '{}': {:?}", shortcut, e),
@@ -40,7 +53,18 @@ pub fn register_close_tab_shortcut(app: &AppHandle, shortcut_str: &str) {
     };
     let shortcut = shortcut_str.to_string();
     match shortcut_manager.register(&shortcut, move || {
+        let _ = main_window.hide();
+        let _ = main_window.show();
+        let _ = main_window.set_focus();
         let _ = main_window.emit("shortcut-close-tab", ());
+        let _ = main_window.set_always_on_top(true);
+        thread::spawn({
+            let main_window = main_window.clone();
+            move || {
+                thread::sleep(Duration::from_millis(1000));
+                let _ = main_window.set_always_on_top(false);
+            }
+        });
     }) {
         Ok(_) => println!("Successfully registered close tab shortcut: {}", shortcut),
         Err(e) => eprintln!(
@@ -68,6 +92,14 @@ pub fn register_toggle_window_shortcut(app: &AppHandle, shortcut_str: &str) {
             let _ = main_window.show();
             let _ = main_window.set_focus();
         }
+        let _ = main_window.set_always_on_top(true);
+        thread::spawn({
+            let main_window = main_window.clone();
+            move || {
+                thread::sleep(Duration::from_millis(1000));
+                let _ = main_window.set_always_on_top(false);
+            }
+        });
     }) {
         Ok(_) => println!(
             "Successfully registered toggle window shortcut: {}",
