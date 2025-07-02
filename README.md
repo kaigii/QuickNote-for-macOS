@@ -2,7 +2,7 @@
 
 # QuickNote
 
-[English] | [[繁體中文](#-quicknote-繁體中文版本)]
+[English](#quicknote) | [[繁體中文](#quicknote-繁體中文版本)]
 
 ![License](https://img.shields.io/badge/license-CC--BY--NC--SA--4.0-blue.svg)
 ![Version](https://img.shields.io/badge/version-0.1.0-brightgreen.svg)
@@ -16,9 +16,11 @@
 
 ---
 
+<!-- English Section Start -->
+
 ### ✨ **QuickNote in Action**
 
-*(建議您在此處放置一個展示應用程式功能的 GIF 動畫，例如：主題切換、建立新筆記、自訂快捷鍵等)*
+*(Put a GIF demo of your app here, e.g., theme switching, new note, custom hotkeys, etc.)*
 
 ![QuickNote Demo](https://user-images.githubusercontent.com/.../placeholder.gif) 
 > *Replace this with a GIF of your application.*
@@ -115,9 +117,10 @@ Contributions are welcome! Whether it's reporting a bug, suggesting a feature, o
 5.  Open a Pull Request
 
 ---
----
 
-##  QuickNote (繁體中文版本)
+## <a id="quicknote-繁體中文版本"></a> QuickNote (繁體中文版本)
+
+[【English】](#quicknote)
 
 <div align="center">
 
