@@ -24,11 +24,11 @@
 **Light Theme**
 ![QuickNote Light Theme](https://github.com/user-attachments/assets/6c5bb556-3701-46e8-8cc3-5a476a1accf1)
 
-**Settings Panel**
-![QuickNote Settings 1](https://github.com/user-attachments/assets/355d944b-36b7-40d5-9959-40ca30dc9370)
+**Settings Panel (Dark)**
+![QuickNote Settings Dark](https://github.com/user-attachments/assets/355d944b-36b7-40d5-9959-40ca30dc9370)
 
-**Settings Panel**
-![QuickNote Settings 2](https://github.com/user-attachments/assets/8eda5e60-601d-467c-8861-0eb536d9e58c)
+**Settings Panel (Light)**
+![QuickNote Settings Light](https://github.com/user-attachments/assets/8eda5e60-601d-467c-8861-0eb536d9e58c)
 
 ---
 
