@@ -2,7 +2,7 @@
 
 # QuickNote
 
-[English](#quicknote) | [[繁體中文](#quicknote-繁體中文版本)]
+[English](#en) | [繁體中文](#zh)
 
 ![License](https://img.shields.io/badge/license-CC--BY--NC--SA--4.0-blue.svg)
 ![Version](https://img.shields.io/badge/version-0.1.0-brightgreen.svg)
@@ -15,6 +15,8 @@
 </div>
 
 ---
+
+<a id="en"></a>
 
 <!-- English Section Start -->
 
@@ -118,9 +120,11 @@ Contributions are welcome! Whether it's reporting a bug, suggesting a feature, o
 
 ---
 
-## <a id="quicknote-繁體中文版本"></a> QuickNote (繁體中文版本)
+<a id="zh"></a>
 
-[【English】](#quicknote)
+## QuickNote (繁體中文版本)
+
+[English](#en)
 
 <div align="center">
 
