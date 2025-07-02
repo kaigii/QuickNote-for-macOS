@@ -2,7 +2,9 @@
 
 # QuickNote
 
-[English](#en) | [繁體中文](#zh)
+[繁體中文](./README.zh-TW.md)
+
+[English](#en)
 
 ![License](https://img.shields.io/badge/license-CC--BY--NC--SA--4.0-blue.svg)
 ![Version](https://img.shields.io/badge/version-0.1.0-brightgreen.svg)
