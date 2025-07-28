@@ -74,11 +74,7 @@ QuickNote isn't just another text editor. It's meticulously crafted to be an ext
 
 Or visit the [Releases page for all versions](https://github.com/kaigii/QuickNote/releases)
 
-### Installation Notes
-
-Since this is an unsigned application, macOS may block the installation. If you see "QuickNote is damaged and can't be opened" error:
-
-#### 🚀 Quick Installation (Recommended)
+### 🚀 Quick Installation
 
 **One-Command Installation**
 ```bash
@@ -90,11 +86,6 @@ curl -L -o QuickNote_0.1.0_aarch64.dmg "https://github.com/kaigii/QuickNote-for-
 2. Eject the disk image
 
 
-
-
-
-#### 💡 Why This Happens
-This is normal behavior for unsigned applications downloaded from the internet. macOS adds security quarantine attributes to protect users. The file is not actually damaged.
 
 
 

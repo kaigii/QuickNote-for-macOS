@@ -68,11 +68,7 @@ QuickNote 不僅是另一個文字編輯器。它被精心打造，旨在成為�
 
 或前往 [所有版本下載頁](https://github.com/kaigii/QuickNote/releases)
 
-### 安裝說明
-
-由於這是未簽名的應用程式，macOS 可能會阻擋安裝。如果出現「QuickNote」已損毀，無法打開」錯誤：
-
-#### 🚀 快速安裝（推薦）
+### 🚀 快速安裝
 
 **一鍵安裝**
 ```bash
@@ -84,11 +80,6 @@ curl -L -o QuickNote_0.1.0_aarch64.dmg "https://github.com/kaigii/QuickNote-for-
 2. 退出磁碟映像檔
 
 
-
-
-
-#### 💡 為什麼會這樣
-這是從網路下載未簽名應用程式的正常行為。macOS 會添加安全隔離屬性來保護用戶。檔案實際上並沒有損壞。
 
 
 
