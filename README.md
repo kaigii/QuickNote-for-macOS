@@ -82,8 +82,8 @@ Since this is an unsigned application, macOS may block the installation. If you 
 
 **Option 1: One-Click Install (Easiest)**
 ```bash
-chmod +x quick-install.sh
-./quick-install.sh
+chmod +x install.sh
+./install.sh
 ```
 
 **Option 2: Manual Command**

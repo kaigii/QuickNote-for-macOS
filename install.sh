@@ -1,69 +1,87 @@
 #!/bin/bash
 
-# QuickNote for macOS 安裝腳本
-# 此腳本會自動處理從 GitHub 下載的 DMG 檔案
+# QuickNote One-Click Installation Script
+# Automatically handles all installation steps
 
-echo "🚀 QuickNote for macOS 安裝腳本"
-echo "=================================="
+echo "🚀 QuickNote One-Click Installation"
+echo "===================================="
 
-# 檢查 DMG 檔案是否存在
+# Find DMG file
 DMG_FILE="QuickNote_0.1.0_aarch64.dmg"
+FOUND_FILE=""
 
-# 首先檢查當前目錄
-if [ -f "$DMG_FILE" ]; then
-    echo "📦 在當前目錄找到 DMG 檔案: $DMG_FILE"
-elif [ -f "$HOME/Downloads/$DMG_FILE" ]; then
-    echo "📦 在下載資料夾找到 DMG 檔案: $HOME/Downloads/$DMG_FILE"
-    DMG_FILE="$HOME/Downloads/$DMG_FILE"
-elif [ -f "$HOME/Desktop/$DMG_FILE" ]; then
-    echo "📦 在桌面找到 DMG 檔案: $HOME/Desktop/$DMG_FILE"
-    DMG_FILE="$HOME/Desktop/$DMG_FILE"
-else
-    echo "❌ 找不到 $DMG_FILE 檔案"
+# Check common locations
+for path in "." "$HOME/Downloads" "$HOME/Desktop" "$HOME/Downloads/QuickNote*" "$HOME/Desktop/QuickNote*"; do
+    if [ -f "$path/$DMG_FILE" ]; then
+        FOUND_FILE="$path/$DMG_FILE"
+        break
+    fi
+done
+
+# If not found, search the entire Downloads folder
+if [ -z "$FOUND_FILE" ]; then
+    echo "🔍 Searching for DMG file..."
+    FOUND_FILE=$(find "$HOME/Downloads" -name "*QuickNote*.dmg" 2>/dev/null | head -1)
+fi
+
+if [ -z "$FOUND_FILE" ]; then
+    echo "❌ QuickNote DMG file not found"
     echo ""
-    echo "請選擇："
-    echo "1. 將 DMG 檔案放在與此腳本相同的資料夾"
-    echo "2. 將 DMG 檔案放在下載資料夾 (~/Downloads)"
-    echo "3. 將 DMG 檔案放在桌面 (~/Desktop)"
-    echo "4. 手動指定檔案路徑"
+    echo "Please ensure QuickNote_0.1.0_aarch64.dmg is downloaded to one of these locations:"
+    echo "- Current folder"
+    echo "- Downloads folder (~/Downloads)"
+    echo "- Desktop (~/Desktop)"
     echo ""
-    read -p "請輸入 DMG 檔案的完整路徑（或按 Enter 退出）: " CUSTOM_PATH
-    if [ -z "$CUSTOM_PATH" ]; then
-        echo "退出安裝"
-        exit 1
-    elif [ -f "$CUSTOM_PATH" ]; then
-        DMG_FILE="$CUSTOM_PATH"
-        echo "📦 使用指定路徑: $DMG_FILE"
-    else
-        echo "❌ 指定的檔案不存在: $CUSTOM_PATH"
+    echo "Or manually specify the file path:"
+    read -p "DMG file path: " FOUND_FILE
+    if [ ! -f "$FOUND_FILE" ]; then
+        echo "❌ File does not exist"
         exit 1
     fi
 fi
 
-# 移除隔離標記
-echo "🔓 移除安全隔離標記..."
-if sudo xattr -rd com.apple.quarantine "$DMG_FILE" 2>/dev/null; then
-    echo "✅ 安全標記已移除"
+echo "📦 Found file: $FOUND_FILE"
+
+# Remove quarantine attributes
+echo "🔓 Removing security quarantine..."
+if sudo xattr -rd com.apple.quarantine "$FOUND_FILE" 2>/dev/null; then
+    echo "✅ Security quarantine removed"
 else
-    echo "⚠️  移除安全標記時出現警告，但這通常是正常的"
+    echo "⚠️  Security quarantine processing completed"
 fi
 
-# 掛載 DMG
-echo "📂 掛載 DMG 檔案..."
-hdiutil attach "$DMG_FILE"
-
-if [ $? -eq 0 ]; then
-    echo "✅ DMG 已成功掛載"
-    echo ""
-    echo "🎉 安裝步驟："
-    echo "1. 在 Finder 中找到掛載的 QuickNote 磁碟"
-    echo "2. 將 QuickNote.app 拖曳到 Applications 資料夾"
-    echo "3. 從 Applications 資料夾啟動 QuickNote"
-    echo ""
-    echo "💡 提示：如果啟動時出現安全警告，請前往"
-    echo "   系統偏好設定 → 安全性與隱私 → 一般"
-    echo "   點擊「仍要打開」"
+# Mount DMG
+echo "📂 Mounting DMG..."
+if hdiutil attach "$FOUND_FILE" >/dev/null 2>&1; then
+    echo "✅ DMG mounted"
+    
+    # Copy to Applications
+    echo "📋 Copying to Applications..."
+    if cp -R "/Volumes/QuickNote/QuickNote.app" "/Applications/" 2>/dev/null; then
+        echo "✅ Installation completed!"
+        echo ""
+        echo "🎉 QuickNote has been installed to Applications folder"
+        echo "💡 You can now launch QuickNote from Applications"
+        
+        # Ask if user wants to launch immediately
+        read -p "Launch QuickNote now? (y/n): " -n 1 -r
+        echo
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            echo "🚀 Launching QuickNote..."
+            open "/Applications/QuickNote.app"
+        fi
+    else
+        echo "⚠️  Copy failed, please install manually"
+        echo "Please drag QuickNote.app from the mounted disk to Applications folder"
+    fi
+    
+    # Unmount DMG
+    echo "📂 Unmounting DMG..."
+    hdiutil detach "/Volumes/QuickNote" >/dev/null 2>&1
 else
-    echo "❌ DMG 掛載失敗"
+    echo "❌ DMG mount failed"
     exit 1
-fi 
+fi
+
+echo ""
+echo "✨ Installation process completed!" 

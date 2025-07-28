@@ -76,8 +76,8 @@ QuickNote 不僅是另一個文字編輯器。它被精心打造，旨在成為�
 
 **選項 1：一鍵安裝（最簡單）**
 ```bash
-chmod +x quick-install.sh
-./quick-install.sh
+chmod +x install.sh
+./install.sh
 ```
 
 **選項 2：手動指令**

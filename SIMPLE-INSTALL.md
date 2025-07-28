@@ -2,7 +2,7 @@
 
 ## 📦 下載
 1. 下載 `QuickNote_0.1.0_aarch64.dmg`
-2. 下載 `quick-install.sh`
+2. 下載 `install.sh`
 
 ## ⚡ 安裝（只需 2 個指令）
 
@@ -10,8 +10,8 @@
 
 2. **執行這兩個指令**：
    ```bash
-   chmod +x quick-install.sh
-   ./quick-install.sh
+   chmod +x install.sh
+   ./install.sh
    ```
 
 3. **完成！** 🎉
