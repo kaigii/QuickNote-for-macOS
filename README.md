@@ -70,9 +70,9 @@ QuickNote isn't just another text editor. It's meticulously crafted to be an ext
 
 ## 📦 Download
 
-[⬇️ Download for macOS (.dmg)](https://github.com/kaigii/QuickNote/releases/tag/v0.1.0)
+[⬇️ Download for macOS (.dmg)](https://github.com/kaigii/QuickNote-for-macOS/releases/tag/v0.1.0)
 
-Or visit the [Releases page for all versions](https://github.com/kaigii/QuickNote/releases)
+Or visit the [Releases page for all versions](https://github.com/kaigii/QuickNote-for-macOS/releases)
 
 ### 🚀 Quick Installation
 
@@ -105,8 +105,8 @@ curl -L -o QuickNote.dmg "https://github.com/kaigii/QuickNote-for-macOS/releases
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/kaigii/QuickNote.git
-    cd QuickNote
+    git clone https://github.com/kaigii/QuickNote-for-macOS.git
+    cd QuickNote-for-macOS
     ```
 
 2.  **Install frontend dependencies:**
