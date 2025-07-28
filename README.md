@@ -78,15 +78,29 @@ Or visit the [Releases page for all versions](https://github.com/kaigii/QuickNot
 
 Since this is an unsigned application, macOS may block the installation. If you see "QuickNote is damaged and can't be opened" error:
 
-1. **Method 1 (Recommended)**: Right-click the `.dmg` file and select "Open"
-2. **Method 2**: Go to System Preferences → Security & Privacy → General, and click "Open Anyway"
-3. **Method 3 (Terminal)**: Run this command in Terminal:
+#### 🚀 Quick Installation (Recommended)
+1. Download the DMG file from GitHub
+2. Open Terminal and navigate to the download folder:
    ```bash
-   sudo xattr -rd com.apple.quarantine /path/to/QuickNote_0.1.0_aarch64.dmg
+   cd ~/Downloads
    ```
-   Then try opening the DMG file again.
+3. Run this command to fix the DMG file:
+   ```bash
+   sudo xattr -rd com.apple.quarantine QuickNote_0.1.0_aarch64.dmg
+   ```
+4. Now you can open the DMG file normally
 
-**Note**: Replace `/path/to/` with the actual path where you downloaded the file (usually `~/Downloads/`).
+#### 🔧 Alternative Methods
+1. **Method 1**: Right-click the `.dmg` file and select "Open"
+2. **Method 2**: Go to System Preferences → Security & Privacy → General, and click "Open Anyway"
+3. **Method 3**: Use the provided installation script:
+   ```bash
+   chmod +x install.sh
+   ./install.sh
+   ```
+
+#### 💡 Why This Happens
+This is normal behavior for unsigned applications downloaded from the internet. macOS adds security quarantine attributes to protect users. The file is not actually damaged.
 
 ---
 
