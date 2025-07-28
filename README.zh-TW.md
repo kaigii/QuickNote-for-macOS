@@ -83,21 +83,7 @@ curl -L -o QuickNote_0.1.0_aarch64.dmg "https://github.com/kaigii/QuickNote-for-
 1. 將 `QuickNote.app` 從掛載的磁碟拖拽到 `Applications` 資料夾
 2. 退出磁碟映像檔
 
-**選項 2：手動指令（替代方案）**
-如果你偏好手動下載：
 
-1. 從 [GitHub Releases](https://github.com/kaigii/QuickNote-for-macOS/releases) 下載 DMG 檔案
-2. 開啟終端機並執行以下指令（請替換路徑）：
-   ```bash
-   sudo xattr -rd com.apple.quarantine /path/to/QuickNote_0.1.0_aarch64.dmg
-   ```
-   
-   **常見路徑：**
-   - 下載資料夾：`~/Downloads/QuickNote_0.1.0_aarch64.dmg`
-   - 桌面：`~/Desktop/QuickNote_0.1.0_aarch64.dmg`
-   - 當前資料夾：`./QuickNote_0.1.0_aarch64.dmg`
-
-3. 現在可以正常打開 DMG 檔案
 
 #### 🔧 其他方法
 1. **方法 1**：右鍵點擊 `.dmg` 檔案並選擇「打開」

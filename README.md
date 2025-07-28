@@ -89,21 +89,7 @@ curl -L -o QuickNote_0.1.0_aarch64.dmg "https://github.com/kaigii/QuickNote-for-
 1. Drag `QuickNote.app` from the mounted disk to `Applications` folder
 2. Eject the disk image
 
-**Option 2: Manual Command (Alternative)**
-If you prefer to download manually:
 
-1. Download the DMG file from [GitHub Releases](https://github.com/kaigii/QuickNote-for-macOS/releases)
-2. Open Terminal and run this command (replace the path if needed):
-   ```bash
-   sudo xattr -rd com.apple.quarantine /path/to/QuickNote_0.1.0_aarch64.dmg
-   ```
-   
-   **Common paths:**
-   - Downloads folder: `~/Downloads/QuickNote_0.1.0_aarch64.dmg`
-   - Desktop: `~/Desktop/QuickNote_0.1.0_aarch64.dmg`
-   - Current folder: `./QuickNote_0.1.0_aarch64.dmg`
-
-3. Now you can open the DMG file normally
 
 #### 🔧 Alternative Methods
 1. **Method 1**: Right-click the `.dmg` file and select "Open"
