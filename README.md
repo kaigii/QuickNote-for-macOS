@@ -86,6 +86,13 @@ chmod +x install.sh
 ./install.sh
 ```
 
+**What the script does automatically:**
+- ✅ Find DMG file
+- ✅ Remove security quarantine
+- ✅ Mount DMG
+- ✅ Install to Applications
+- ✅ Clean up temporary files
+
 **Option 2: Manual Command**
 1. Download the DMG file from GitHub
 2. Open Terminal and run this command (replace the path if needed):
@@ -111,6 +118,21 @@ chmod +x install.sh
 
 #### 💡 Why This Happens
 This is normal behavior for unsigned applications downloaded from the internet. macOS adds security quarantine attributes to protect users. The file is not actually damaged.
+
+#### 🆘 Troubleshooting
+
+**Problem**: DMG file not found
+**Solution**: Place the DMG file in Downloads folder or Desktop
+
+**Problem**: Permission denied
+**Solution**: Enter your password (characters won't show when typing)
+
+**Problem**: App won't launch
+**Solution**: Go to System Preferences → Security & Privacy → General → Click "Open Anyway"
+
+---
+
+**It's that simple!** No need to remember complex commands, the script handles everything.
 
 ---
 
