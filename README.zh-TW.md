@@ -81,11 +81,17 @@ chmod +x install.sh
 ```
 
 **腳本會自動處理：**
+- ✅ 從 GitHub 下載 DMG 檔案（如果本地沒有）
 - ✅ 找到 DMG 檔案
 - ✅ 移除安全標記
 - ✅ 掛載 DMG
 - ✅ 安裝到 Applications
 - ✅ 清理臨時檔案
+
+**選項 1b：下載安裝包**
+1. 從 GitHub 下載 `QuickNote-Install-Package.zip`
+2. 解壓縮並執行裡面的 `install.sh`
+3. 腳本會自動下載並安裝一切
 
 **選項 2：手動指令**
 1. 從 GitHub 下載 DMG 檔案

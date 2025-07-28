@@ -87,11 +87,17 @@ chmod +x install.sh
 ```
 
 **What the script does automatically:**
+- ✅ Download DMG file from GitHub (if not found locally)
 - ✅ Find DMG file
 - ✅ Remove security quarantine
 - ✅ Mount DMG
 - ✅ Install to Applications
 - ✅ Clean up temporary files
+
+**Option 1b: Download Installation Package**
+1. Download `QuickNote-Install-Package.zip` from GitHub
+2. Extract and run `install.sh` inside
+3. The script will automatically download and install everything
 
 **Option 2: Manual Command**
 1. Download the DMG file from GitHub
