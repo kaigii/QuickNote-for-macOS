@@ -76,6 +76,12 @@ QuickNote isn't just another text editor. It's meticulously crafted to be an ext
 
 Or visit the [Releases page for all versions](https://github.com/kaigii/QuickNote-for-macOS/releases)
 
+### 🌐 Web Version
+
+Visit our [web version](https://kaigii.github.io/QuickNote/) to try QuickNote in your browser!
+
+**Note:** The web version is a demonstration of the interface. For the full desktop experience with all features, please download the macOS app.
+
 **Option 1: One-Command Installation (Recommended)**
 ```bash
 curl -L -o QuickNote.dmg "https://github.com/kaigii/QuickNote-for-macOS/releases/latest/download/QuickNote_0.1.0_aarch64.dmg" && sudo xattr -rd com.apple.quarantine QuickNote.dmg && open QuickNote.dmg
