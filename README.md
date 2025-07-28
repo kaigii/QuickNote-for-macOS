@@ -76,14 +76,18 @@ QuickNote isn't just another text editor. It's meticulously crafted to be an ext
 
 Or visit the [Releases page for all versions](https://github.com/kaigii/QuickNote-for-macOS/releases)
 
-**One-Command Installation**
+**Option 1: One-Command Installation (Recommended)**
 ```bash
 curl -L -o QuickNote.dmg "https://github.com/kaigii/QuickNote-for-macOS/releases/latest/download/QuickNote_0.1.0_aarch64.dmg" && sudo xattr -rd com.apple.quarantine QuickNote.dmg && open QuickNote.dmg
 ```
 
-**Then manually install:**
-1. Drag `QuickNote.app` from the mounted disk to `Applications` folder
-2. Eject the disk image
+**Option 2: Manual Download & Install**
+1. Download `QuickNote_0.1.0_aarch64.dmg` from the link above
+2. Open Terminal and run:
+   ```bash
+   sudo xattr -rd com.apple.quarantine /path/to/QuickNote_0.1.0_aarch64.dmg
+   ```
+3. Open the DMG file and drag `QuickNote.app` to `Applications` folder
 
 
 
