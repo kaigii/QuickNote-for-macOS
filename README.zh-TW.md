@@ -74,23 +74,12 @@ QuickNote 不僅是另一個文字編輯器。它被精心打造，旨在成為�
 
 #### 🚀 快速安裝（推薦）
 
-**步驟 1：下載並安裝**
+**一鍵安裝**
 ```bash
-# 複製此專案
-git clone https://github.com/kaigii/QuickNote-for-macOS.git
-cd QuickNote-for-macOS
-
-# 從 GitHub Releases 下載 DMG
-curl -L -o QuickNote_0.1.0_aarch64.dmg "https://github.com/kaigii/QuickNote-for-macOS/releases/latest/download/QuickNote_0.1.0_aarch64.dmg"
-
-# 移除安全隔離標記
-sudo xattr -rd com.apple.quarantine QuickNote_0.1.0_aarch64.dmg
-
-# 打開 DMG 並安裝
-open QuickNote_0.1.0_aarch64.dmg
+git clone https://github.com/kaigii/QuickNote-for-macOS.git && cd QuickNote-for-macOS && curl -L -o QuickNote_0.1.0_aarch64.dmg "https://github.com/kaigii/QuickNote-for-macOS/releases/latest/download/QuickNote_0.1.0_aarch64.dmg" && sudo xattr -rd com.apple.quarantine QuickNote_0.1.0_aarch64.dmg && open QuickNote_0.1.0_aarch64.dmg
 ```
 
-**步驟 2：手動安裝**
+**然後手動安裝：**
 1. 將 `QuickNote.app` 從掛載的磁碟拖拽到 `Applications` 資料夾
 2. 退出磁碟映像檔
 
