@@ -70,11 +70,17 @@ QuickNote 不僅是另一個文字編輯器。它被精心打造，旨在成為�
 
 ### 安裝說明
 
-由於這是未簽名的應用程式，macOS 可能會阻擋安裝。安裝方法：
+由於這是未簽名的應用程式，macOS 可能會阻擋安裝。如果出現「QuickNote」已損毀，無法打開」錯誤：
 
 1. **方法 1（推薦）**：右鍵點擊 `.dmg` 檔案並選擇「打開」
 2. **方法 2**：前往系統偏好設定 → 安全性與隱私 → 一般，點擊「仍要打開」
-3. **方法 3**：在終端機執行：`sudo xattr -rd com.apple.quarantine /path/to/QuickNote.dmg`
+3. **方法 3（終端機）**：在終端機執行以下指令：
+   ```bash
+   sudo xattr -rd com.apple.quarantine /path/to/QuickNote_0.1.0_aarch64.dmg
+   ```
+   然後再次嘗試打開 DMG 檔案。
+
+**注意**：請將 `/path/to/` 替換為實際的檔案路徑（通常是 `~/Downloads/`）。
 
 ---
 

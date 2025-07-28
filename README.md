@@ -76,11 +76,17 @@ Or visit the [Releases page for all versions](https://github.com/kaigii/QuickNot
 
 ### Installation Notes
 
-Since this is an unsigned application, macOS may block the installation. To install:
+Since this is an unsigned application, macOS may block the installation. If you see "QuickNote is damaged and can't be opened" error:
 
 1. **Method 1 (Recommended)**: Right-click the `.dmg` file and select "Open"
 2. **Method 2**: Go to System Preferences → Security & Privacy → General, and click "Open Anyway"
-3. **Method 3**: In Terminal, run: `sudo xattr -rd com.apple.quarantine /path/to/QuickNote.dmg`
+3. **Method 3 (Terminal)**: Run this command in Terminal:
+   ```bash
+   sudo xattr -rd com.apple.quarantine /path/to/QuickNote_0.1.0_aarch64.dmg
+   ```
+   Then try opening the DMG file again.
+
+**Note**: Replace `/path/to/` with the actual path where you downloaded the file (usually `~/Downloads/`).
 
 ---
 
