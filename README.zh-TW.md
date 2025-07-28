@@ -81,17 +81,11 @@ chmod +x install.sh
 ```
 
 **腳本會自動處理：**
-- ✅ 從 GitHub 下載 DMG 檔案（如果本地沒有）
 - ✅ 找到 DMG 檔案
 - ✅ 移除安全標記
 - ✅ 掛載 DMG
 - ✅ 安裝到 Applications
 - ✅ 清理臨時檔案
-
-**選項 1b：下載安裝包**
-1. 從 GitHub 下載 `QuickNote-Install-Package.zip`
-2. 解壓縮並執行裡面的 `install.sh`
-3. 腳本會自動下載並安裝一切
 
 **選項 2：手動指令**
 1. 從 GitHub 下載 DMG 檔案
@@ -118,6 +112,30 @@ chmod +x install.sh
 
 #### 💡 為什麼會這樣
 這是從網路下載未簽名應用程式的正常行為。macOS 會添加安全隔離屬性來保護用戶。檔案實際上並沒有損壞。
+
+#### 🔐 代碼簽名解決方案（開發者專用）
+
+如果你想要創建一個用戶可以直接雙擊安裝的 DMG，有以下幾個選項：
+
+**選項 1：Apple Developer 帳戶（推薦）**
+- 費用：$99/年
+- 結果：用戶可以直接雙擊 DMG 安裝
+- 步驟：
+  1. 註冊 Apple Developer Program
+  2. 執行：`./sign-app.sh` 並選擇選項 2
+  3. 建置：`npm run tauri build`
+
+**選項 2：免費開發簽名**
+- 費用：免費
+- 結果：有效期限 7 天，之後過期
+- 步驟：
+  1. 執行：`./sign-app.sh` 並選擇選項 1
+  2. 建置：`npm run tauri build`
+
+**選項 3：目前的方法**
+- 費用：免費
+- 結果：用戶需要執行 `xattr` 指令或使用 `install.sh`
+- 步驟：使用目前的 `install.sh` 腳本
 
 #### 🆘 故障排除
 

@@ -87,17 +87,11 @@ chmod +x install.sh
 ```
 
 **What the script does automatically:**
-- ✅ Download DMG file from GitHub (if not found locally)
 - ✅ Find DMG file
 - ✅ Remove security quarantine
 - ✅ Mount DMG
 - ✅ Install to Applications
 - ✅ Clean up temporary files
-
-**Option 1b: Download Installation Package**
-1. Download `QuickNote-Install-Package.zip` from GitHub
-2. Extract and run `install.sh` inside
-3. The script will automatically download and install everything
 
 **Option 2: Manual Command**
 1. Download the DMG file from GitHub
@@ -124,6 +118,30 @@ chmod +x install.sh
 
 #### 💡 Why This Happens
 This is normal behavior for unsigned applications downloaded from the internet. macOS adds security quarantine attributes to protect users. The file is not actually damaged.
+
+#### 🔐 Code Signing Solutions (For Developers)
+
+If you want to create a DMG that users can double-click to install without any issues, you have several options:
+
+**Option 1: Apple Developer Account (Recommended)**
+- Cost: $99/year
+- Result: Users can double-click DMG to install
+- Steps:
+  1. Register for Apple Developer Program
+  2. Run: `./sign-app.sh` and choose option 2
+  3. Build: `npm run tauri build`
+
+**Option 2: Free Development Signing**
+- Cost: Free
+- Result: Works for 7 days, then expires
+- Steps:
+  1. Run: `./sign-app.sh` and choose option 1
+  2. Build: `npm run tauri build`
+
+**Option 3: Current Approach**
+- Cost: Free
+- Result: Users need to run `xattr` command or use `install.sh`
+- Steps: Use the current `install.sh` script
 
 #### 🆘 Troubleshooting
 

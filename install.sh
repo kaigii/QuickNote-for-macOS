@@ -24,41 +24,19 @@ if [ -z "$FOUND_FILE" ]; then
     FOUND_FILE=$(find "$HOME/Downloads" -name "*QuickNote*.dmg" 2>/dev/null | head -1)
 fi
 
-# If still not found, offer to download automatically
 if [ -z "$FOUND_FILE" ]; then
-    echo "📦 QuickNote DMG file not found locally"
+    echo "❌ QuickNote DMG file not found"
     echo ""
-    echo "Would you like to download it automatically from GitHub? (y/n): "
-    read -p "" -n 1 -r
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        echo "📥 Downloading QuickNote from GitHub..."
-        DOWNLOAD_URL="https://github.com/kaigii/QuickNote-for-macOS/releases/download/v0.1.0/QuickNote_0.1.0_aarch64.dmg"
-        
-        # Download to Downloads folder
-        if curl -L -o "$HOME/Downloads/$DMG_FILE" "$DOWNLOAD_URL"; then
-            echo "✅ Download completed!"
-            FOUND_FILE="$HOME/Downloads/$DMG_FILE"
-        else
-            echo "❌ Download failed"
-            echo ""
-            echo "Please download manually from:"
-            echo "https://github.com/kaigii/QuickNote-for-macOS/releases"
-            exit 1
-        fi
-    else
-        echo ""
-        echo "Please ensure QuickNote_0.1.0_aarch64.dmg is downloaded to one of these locations:"
-        echo "- Current folder"
-        echo "- Downloads folder (~/Downloads)"
-        echo "- Desktop (~/Desktop)"
-        echo ""
-        echo "Or manually specify the file path:"
-        read -p "DMG file path: " FOUND_FILE
-        if [ ! -f "$FOUND_FILE" ]; then
-            echo "❌ File does not exist"
-            exit 1
-        fi
+    echo "Please ensure QuickNote_0.1.0_aarch64.dmg is downloaded to one of these locations:"
+    echo "- Current folder"
+    echo "- Downloads folder (~/Downloads)"
+    echo "- Desktop (~/Desktop)"
+    echo ""
+    echo "Or manually specify the file path:"
+    read -p "DMG file path: " FOUND_FILE
+    if [ ! -f "$FOUND_FILE" ]; then
+        echo "❌ File does not exist"
+        exit 1
     fi
 fi
 
