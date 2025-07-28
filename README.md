@@ -79,6 +79,14 @@ Or visit the [Releases page for all versions](https://github.com/kaigii/QuickNot
 Since this is an unsigned application, macOS may block the installation. If you see "QuickNote is damaged and can't be opened" error:
 
 #### 🚀 Quick Installation (Recommended)
+
+**Option 1: One-Click Install (Easiest)**
+```bash
+chmod +x quick-install.sh
+./quick-install.sh
+```
+
+**Option 2: Manual Command**
 1. Download the DMG file from GitHub
 2. Open Terminal and run this command (replace the path if needed):
    ```bash

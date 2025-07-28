@@ -42,9 +42,7 @@ fi
 
 # 移除隔離標記
 echo "🔓 移除安全隔離標記..."
-sudo xattr -rd com.apple.quarantine "$DMG_FILE"
-
-if [ $? -eq 0 ]; then
+if sudo xattr -rd com.apple.quarantine "$DMG_FILE" 2>/dev/null; then
     echo "✅ 安全標記已移除"
 else
     echo "⚠️  移除安全標記時出現警告，但這通常是正常的"
