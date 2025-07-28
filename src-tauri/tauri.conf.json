@@ -45,11 +45,32 @@
   "bundle": {
     "active": true,
     "targets": "all",
-      "identifier": "com.kaigii.quicknote",
+    "identifier": "com.kaigii.quicknote",
     "icon": [
         "icons/512x512.png"
-    ]
-    },
+    ],
+    "macOS": {
+      "signingIdentity": null,
+      "providerShortName": null,
+      "entitlements": null,
+      "exceptionDomain": null,
+      "frameworks": null,
+      "minimumSystemVersion": null,
+      "license": null,
+      "category": null,
+      "shortDescription": null,
+      "longDescription": null,
+      "usageDescription": null,
+      "extraUsageDescription": null,
+      "minimumOSVersion": null,
+      "hardenedRuntime": true,
+      "entitlements": null,
+      "exceptionDomain": null,
+      "providerShortName": null,
+      "signingIdentity": null,
+      "notarize": false
+    }
+  },
     "security": {
       "csp": null
     },

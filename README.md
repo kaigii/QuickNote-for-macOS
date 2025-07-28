@@ -74,6 +74,14 @@ QuickNote isn't just another text editor. It's meticulously crafted to be an ext
 
 Or visit the [Releases page for all versions](https://github.com/kaigii/QuickNote/releases)
 
+### Installation Notes
+
+Since this is an unsigned application, macOS may block the installation. To install:
+
+1. **Method 1 (Recommended)**: Right-click the `.dmg` file and select "Open"
+2. **Method 2**: Go to System Preferences → Security & Privacy → General, and click "Open Anyway"
+3. **Method 3**: In Terminal, run: `sudo xattr -rd com.apple.quarantine /path/to/QuickNote.dmg`
+
 ---
 
 ## 📦 Getting Started
