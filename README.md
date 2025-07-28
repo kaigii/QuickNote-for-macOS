@@ -78,7 +78,7 @@ Or visit the [Releases page for all versions](https://github.com/kaigii/QuickNot
 
 ### 🌐 Web Version
 
-Visit our [web version](https://kaigii.github.io/QuickNote/) to try QuickNote in your browser!
+Visit our [web version](https://kaigii.github.io/QuickNote-for-macOS/) to try QuickNote in your browser!
 
 **Note:** The web version is a demonstration of the interface. For the full desktop experience with all features, please download the macOS app.
 

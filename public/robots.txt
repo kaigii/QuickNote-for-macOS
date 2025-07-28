@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kaigii.github.io/QuickNote/sitemap.xml 
+Sitemap: https://kaigii.github.io/QuickNote-for-macOS/sitemap.xml 

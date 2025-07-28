@@ -18,7 +18,7 @@ git push origin main
 ```
 
 部署完成后，您的网站将可以通过以下地址访问：
-`https://[您的用户名].github.io/QuickNote/`
+`https://[您的用户名].github.io/QuickNote-for-macOS/`
 
 ## 🔍 Google Search Console 设置
 
@@ -26,7 +26,7 @@ git push origin main
 
 1. 访问 [Google Search Console](https://search.google.com/search-console)
 2. 点击 "添加资源"
-3. 输入您的网站 URL：`https://[您的用户名].github.io/QuickNote/`
+3. 输入您的网站 URL：`https://[您的用户名].github.io/QuickNote-for-macOS/`
 4. 选择 "HTML 标签" 验证方式
 
 ### 2. 验证网站所有权
@@ -51,7 +51,7 @@ git push origin main
 ### 3. 提交 Sitemap
 
 1. 在 Google Search Console 中，进入 "Sitemaps" 部分
-2. 添加您的 sitemap URL：`https://[您的用户名].github.io/QuickNote/sitemap.xml`
+2. 添加您的 sitemap URL：`https://[您的用户名].github.io/QuickNote-for-macOS/sitemap.xml`
 3. 提交 sitemap
 
 ## 📊 监控和分析

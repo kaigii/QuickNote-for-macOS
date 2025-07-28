@@ -15,7 +15,7 @@ export default defineConfig(async () => ({
   },
 
   // GitHub Pages 配置
-  base: process.env.NODE_ENV === 'production' ? '/QuickNote/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/QuickNote-for-macOS/' : '/',
 
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
   //
