@@ -119,44 +119,7 @@ chmod +x install.sh
 #### 💡 Why This Happens
 This is normal behavior for unsigned applications downloaded from the internet. macOS adds security quarantine attributes to protect users. The file is not actually damaged.
 
-#### 🔐 Code Signing Solutions (For Developers)
 
-If you want to create a DMG that users can double-click to install without any issues, you have several options:
-
-**Option 1: Apple Developer Account (Recommended)**
-- Cost: $99/year
-- Result: Users can double-click DMG to install
-- Steps:
-  1. Register for Apple Developer Program
-  2. Run: `./sign-app.sh` and choose option 2
-  3. Build: `npm run tauri build`
-
-**Option 2: Free Development Signing**
-- Cost: Free
-- Result: Works for 7 days, then expires
-- Steps:
-  1. Run: `./sign-app.sh` and choose option 1
-  2. Build: `npm run tauri build`
-  3. **Auto-renewal**: Use `./auto-resign.sh` to automatically re-sign every 6 days
-
-**Option 3: Current Approach**
-- Cost: Free
-- Result: Users need to run `xattr` command or use `install.sh`
-- Steps: Use the current `install.sh` script
-
-#### 🔄 Auto-Resign System
-
-For development signing, you can set up automatic re-signing:
-
-```bash
-# Manual re-sign check
-./auto-resign.sh
-
-# Set up automatic daily checks
-./setup-auto-resign.sh
-```
-
-This ensures your DMG never expires and users can always download a working version.
 
 #### 🆘 Troubleshooting
 

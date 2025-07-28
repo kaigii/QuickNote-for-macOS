@@ -50,7 +50,7 @@
         "icons/512x512.png"
     ],
     "macOS": {
-      "signingIdentity": "Apple Development"
+      "signingIdentity": null
     }
   },
     "security": {
