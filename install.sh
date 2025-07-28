@@ -8,13 +8,37 @@ echo "=================================="
 
 # 檢查 DMG 檔案是否存在
 DMG_FILE="QuickNote_0.1.0_aarch64.dmg"
-if [ ! -f "$DMG_FILE" ]; then
-    echo "❌ 找不到 $DMG_FILE 檔案"
-    echo "請確保 DMG 檔案與此腳本在同一資料夾"
-    exit 1
-fi
 
-echo "📦 找到 DMG 檔案: $DMG_FILE"
+# 首先檢查當前目錄
+if [ -f "$DMG_FILE" ]; then
+    echo "📦 在當前目錄找到 DMG 檔案: $DMG_FILE"
+elif [ -f "$HOME/Downloads/$DMG_FILE" ]; then
+    echo "📦 在下載資料夾找到 DMG 檔案: $HOME/Downloads/$DMG_FILE"
+    DMG_FILE="$HOME/Downloads/$DMG_FILE"
+elif [ -f "$HOME/Desktop/$DMG_FILE" ]; then
+    echo "📦 在桌面找到 DMG 檔案: $HOME/Desktop/$DMG_FILE"
+    DMG_FILE="$HOME/Desktop/$DMG_FILE"
+else
+    echo "❌ 找不到 $DMG_FILE 檔案"
+    echo ""
+    echo "請選擇："
+    echo "1. 將 DMG 檔案放在與此腳本相同的資料夾"
+    echo "2. 將 DMG 檔案放在下載資料夾 (~/Downloads)"
+    echo "3. 將 DMG 檔案放在桌面 (~/Desktop)"
+    echo "4. 手動指定檔案路徑"
+    echo ""
+    read -p "請輸入 DMG 檔案的完整路徑（或按 Enter 退出）: " CUSTOM_PATH
+    if [ -z "$CUSTOM_PATH" ]; then
+        echo "退出安裝"
+        exit 1
+    elif [ -f "$CUSTOM_PATH" ]; then
+        DMG_FILE="$CUSTOM_PATH"
+        echo "📦 使用指定路徑: $DMG_FILE"
+    else
+        echo "❌ 指定的檔案不存在: $CUSTOM_PATH"
+        exit 1
+    fi
+fi
 
 # 移除隔離標記
 echo "🔓 移除安全隔離標記..."

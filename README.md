@@ -80,15 +80,17 @@ Since this is an unsigned application, macOS may block the installation. If you 
 
 #### 🚀 Quick Installation (Recommended)
 1. Download the DMG file from GitHub
-2. Open Terminal and navigate to the download folder:
+2. Open Terminal and run this command (replace the path if needed):
    ```bash
-   cd ~/Downloads
+   sudo xattr -rd com.apple.quarantine /path/to/QuickNote_0.1.0_aarch64.dmg
    ```
-3. Run this command to fix the DMG file:
-   ```bash
-   sudo xattr -rd com.apple.quarantine QuickNote_0.1.0_aarch64.dmg
-   ```
-4. Now you can open the DMG file normally
+   
+   **Common paths:**
+   - Downloads folder: `~/Downloads/QuickNote_0.1.0_aarch64.dmg`
+   - Desktop: `~/Desktop/QuickNote_0.1.0_aarch64.dmg`
+   - Current folder: `./QuickNote_0.1.0_aarch64.dmg`
+
+3. Now you can open the DMG file normally
 
 #### 🔧 Alternative Methods
 1. **Method 1**: Right-click the `.dmg` file and select "Open"

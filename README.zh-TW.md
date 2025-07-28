@@ -74,15 +74,17 @@ QuickNote 不僅是另一個文字編輯器。它被精心打造，旨在成為�
 
 #### 🚀 快速安裝（推薦）
 1. 從 GitHub 下載 DMG 檔案
-2. 開啟終端機並前往下載資料夾：
+2. 開啟終端機並執行以下指令（請替換路徑）：
    ```bash
-   cd ~/Downloads
+   sudo xattr -rd com.apple.quarantine /path/to/QuickNote_0.1.0_aarch64.dmg
    ```
-3. 執行以下指令修復 DMG 檔案：
-   ```bash
-   sudo xattr -rd com.apple.quarantine QuickNote_0.1.0_aarch64.dmg
-   ```
-4. 現在可以正常打開 DMG 檔案
+   
+   **常見路徑：**
+   - 下載資料夾：`~/Downloads/QuickNote_0.1.0_aarch64.dmg`
+   - 桌面：`~/Desktop/QuickNote_0.1.0_aarch64.dmg`
+   - 當前資料夾：`./QuickNote_0.1.0_aarch64.dmg`
+
+3. 現在可以正常打開 DMG 檔案
 
 #### 🔧 其他方法
 1. **方法 1**：右鍵點擊 `.dmg` 檔案並選擇「打開」
