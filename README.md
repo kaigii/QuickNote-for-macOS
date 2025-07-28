@@ -91,34 +91,14 @@ curl -L -o QuickNote_0.1.0_aarch64.dmg "https://github.com/kaigii/QuickNote-for-
 
 
 
-#### 🔧 Alternative Methods
-1. **Method 1**: Right-click the `.dmg` file and select "Open"
-2. **Method 2**: Go to System Preferences → Security & Privacy → General, and click "Open Anyway"
-3. **Method 3**: Use the provided installation script:
-   ```bash
-   chmod +x install.sh
-   ./install.sh
-   ```
+
 
 #### 💡 Why This Happens
 This is normal behavior for unsigned applications downloaded from the internet. macOS adds security quarantine attributes to protect users. The file is not actually damaged.
 
 
 
-#### 🆘 Troubleshooting
 
-**Problem**: DMG file not found
-**Solution**: Place the DMG file in Downloads folder or Desktop
-
-**Problem**: Permission denied
-**Solution**: Enter your password (characters won't show when typing)
-
-**Problem**: App won't launch
-**Solution**: Go to System Preferences → Security & Privacy → General → Click "Open Anyway"
-
----
-
-**It's that simple!** No need to remember complex commands, the script handles everything.
 
 ---
 
