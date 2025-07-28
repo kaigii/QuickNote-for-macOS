@@ -131,11 +131,26 @@ chmod +x install.sh
 - 步驟：
   1. 執行：`./sign-app.sh` 並選擇選項 1
   2. 建置：`npm run tauri build`
+  3. **自動續期**：使用 `./auto-resign.sh` 每 6 天自動重簽
 
 **選項 3：目前的方法**
 - 費用：免費
 - 結果：用戶需要執行 `xattr` 指令或使用 `install.sh`
 - 步驟：使用目前的 `install.sh` 腳本
+
+#### 🔄 自動重簽系統
+
+對於開發簽名，你可以設置自動重簽：
+
+```bash
+# 手動重簽檢查
+./auto-resign.sh
+
+# 設置自動每日檢查
+./setup-auto-resign.sh
+```
+
+這確保你的 DMG 永遠不會過期，用戶總是可以下載到可用的版本。
 
 #### 🆘 故障排除
 

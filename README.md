@@ -137,11 +137,26 @@ If you want to create a DMG that users can double-click to install without any i
 - Steps:
   1. Run: `./sign-app.sh` and choose option 1
   2. Build: `npm run tauri build`
+  3. **Auto-renewal**: Use `./auto-resign.sh` to automatically re-sign every 6 days
 
 **Option 3: Current Approach**
 - Cost: Free
 - Result: Users need to run `xattr` command or use `install.sh`
 - Steps: Use the current `install.sh` script
+
+#### 🔄 Auto-Resign System
+
+For development signing, you can set up automatic re-signing:
+
+```bash
+# Manual re-sign check
+./auto-resign.sh
+
+# Set up automatic daily checks
+./setup-auto-resign.sh
+```
+
+This ensures your DMG never expires and users can always download a working version.
 
 #### 🆘 Troubleshooting
 
