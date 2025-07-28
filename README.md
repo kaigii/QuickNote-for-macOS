@@ -89,11 +89,10 @@ curl -L -o QuickNote.dmg "https://github.com/kaigii/QuickNote-for-macOS/releases
    ```
 3. Open the DMG file and drag `QuickNote.app` to `Applications` folder
 
-
-
-
-
-
+**If you see "QuickNote is damaged and can't be opened":**
+- Go to **System Preferences** → **Security & Privacy** → **General**
+- Click **"Open Anyway"** next to QuickNote
+- Or right-click the app and select **"Open"**
 
 ---
 
