@@ -6,6 +6,9 @@ import { appWindow } from "@tauri-apps/api/window";
 
 // Import Vue and utility functions
 
+// Check if we're running in a web environment
+const isWeb = typeof window !== 'undefined' && !window.__TAURI__;
+
 // Store reference to the tabs state
 const tabsStore = useTabsStore();
 const tabsContainer = ref<HTMLDivElement | null>(null);
@@ -44,7 +47,14 @@ const trafficLightSvg = (
 };
 
 // Only close (red) button has click handler; minimize and maximize are UI only
-const handleClose = () => appWindow.hide();
+const handleClose = () => {
+  if (!isWeb) {
+    appWindow.hide();
+  } else {
+    // In web environment, show a message
+    alert("This is a web demo. Please download the desktop app for full functionality.");
+  }
+};
 
 // Emit events for parent communication
 const emit = defineEmits<{

@@ -12,9 +12,14 @@ async function main() {
   app.use(pinia);
   app.use(I18nextVue, { i18next });
 
-  // Initialize settings from the backend before mounting the app
-  const settingsStore = useSettingsStore();
-  await settingsStore.initialize_settings();
+  // Check if we're running in a web environment
+  const isWeb = typeof window !== 'undefined' && !window.__TAURI__;
+  
+  if (!isWeb) {
+    // Initialize settings from the backend before mounting the app (Tauri only)
+    const settingsStore = useSettingsStore();
+    await settingsStore.initialize_settings();
+  }
 
   app.mount("#app");
 }

@@ -18,6 +18,9 @@ const editorRef = ref<HTMLTextAreaElement | null>(null);
 const lineNumbersRef = ref<HTMLDivElement | null>(null);
 let unlisten: UnlistenFn | null = null;
 
+// Check if we're running in a web environment
+const isWeb = typeof window !== 'undefined' && !window.__TAURI__;
+
 const activeTab = computed(() => tabsStore.activeTab);
 
 const lineCount = computed(() => {
@@ -40,12 +43,14 @@ const syncScroll = () => {
 };
 
 onMounted(async () => {
-  // Listen for the custom file drop event from the Rust backend
-  unlisten = await listen<string[]>("custom-file-drop", (event) => {
-    for (const filePath of event.payload) {
-      tabsStore.openSpecificFile(filePath);
-    }
-  });
+  // Listen for the custom file drop event from the Rust backend (Tauri only)
+  if (!isWeb) {
+    unlisten = await listen<string[]>("custom-file-drop", (event) => {
+      for (const filePath of event.payload) {
+        tabsStore.openSpecificFile(filePath);
+      }
+    });
+  }
 });
 
 onBeforeUnmount(() => {

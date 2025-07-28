@@ -14,6 +14,9 @@ export interface SettingsState {
   loadError: boolean;
 }
 
+// Check if we're running in a web environment
+const isWeb = typeof window !== 'undefined' && !window.__TAURI__;
+
 export const useSettingsStore = defineStore("settings", {
   state: (): SettingsState => ({
     theme: "light",
@@ -31,6 +34,12 @@ export const useSettingsStore = defineStore("settings", {
      * Loads settings from the backend and initializes the store.
      */
     async initialize_settings() {
+      // Skip Tauri API calls in web environment
+      if (isWeb) {
+        console.log("Running in web environment, using default settings");
+        return;
+      }
+
       try {
         const settings = await invoke<{
           theme: string;
@@ -68,6 +77,12 @@ export const useSettingsStore = defineStore("settings", {
       theme: Theme,
     ) {
       this.theme = theme;
+      
+      // Skip Tauri API calls in web environment
+      if (isWeb) {
+        return;
+      }
+
       try {
         await invoke("save_settings", {
           settings: {
@@ -89,6 +104,11 @@ export const useSettingsStore = defineStore("settings", {
      * Saves all settings to the backend.
      */
     async save_all_settings() {
+      // Skip Tauri API calls in web environment
+      if (isWeb) {
+        return;
+      }
+
       try {
         await invoke("save_settings", {
           settings: {
@@ -130,7 +150,9 @@ export const useSettingsStore = defineStore("settings", {
       this.closeTabShortcut = "CmdOrCtrl+Option+Y";
       this.toggleWindowShortcut = "CmdOrCtrl+Option+U";
 
-      await this.save_all_settings();
+      if (!isWeb) {
+        await this.save_all_settings();
+      }
     },
   },
 });

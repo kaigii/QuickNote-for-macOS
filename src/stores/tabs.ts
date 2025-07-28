@@ -55,6 +55,9 @@ function extractFileName(path: string): string {
   return path.split(/[\\/]/).pop() || path;
 }
 
+// Check if we're running in a web environment
+const isWeb = typeof window !== 'undefined' && !window.__TAURI__;
+
 export const useTabsStore = defineStore("tabs", {
   state: () => {
     const firstTabId = generateId();
@@ -99,9 +102,11 @@ export const useTabsStore = defineStore("tabs", {
       this.tabs.push(newTab);
       this.activeTabId = newTab.id;
 
-      // Show and focus window when a new tab is created
-      await appWindow.show();
-      await appWindow.setFocus();
+      // Show and focus window when a new tab is created (Tauri only)
+      if (!isWeb) {
+        await appWindow.show();
+        await appWindow.setFocus();
+      }
     },
 
     /**
@@ -116,18 +121,30 @@ export const useTabsStore = defineStore("tabs", {
 
       // If tab has unsaved changes, ask user before closing
       if (tabToClose.isUnsaved) {
-        const result = await ask(`"${tabToClose.name}" has unsaved changes.`, {
-          title: "Unsaved Changes",
-          type: "warning",
-          okLabel: "Save",
-          cancelLabel: "Don't Save", // This will return `false`
-        });
+        if (isWeb) {
+          // In web environment, use browser confirm dialog
+          const result = confirm(`"${tabToClose.name}" has unsaved changes. Do you want to save?`);
+          if (result) {
+            const savedSuccessfully = await this.saveActiveFile();
+            if (!savedSuccessfully) {
+              return; // User cancelled the save dialog, so we abort closing the tab
+            }
+          }
+        } else {
+          // In Tauri environment, use native dialog
+          const result = await ask(`"${tabToClose.name}" has unsaved changes.`, {
+            title: "Unsaved Changes",
+            type: "warning",
+            okLabel: "Save",
+            cancelLabel: "Don't Save", // This will return `false`
+          });
 
-        if (result) {
-          // User clicked "Save", result is true
-          const savedSuccessfully = await this.saveActiveFile();
-          if (!savedSuccessfully) {
-            return; // User cancelled the save dialog, so we abort closing the tab
+          if (result) {
+            // User clicked "Save", result is true
+            const savedSuccessfully = await this.saveActiveFile();
+            if (!savedSuccessfully) {
+              return; // User cancelled the save dialog, so we abort closing the tab
+            }
           }
         }
         // If user clicked "Don't Save" (result is false), we just proceed to close.
@@ -166,8 +183,8 @@ export const useTabsStore = defineStore("tabs", {
         }
       }
 
-      // Hide window if no tabs left
-      if (this.tabs.length === 0) {
+      // Hide window if no tabs left (Tauri only)
+      if (!isWeb && this.tabs.length === 0) {
         appWindow.hide();
       }
     },
@@ -201,6 +218,12 @@ export const useTabsStore = defineStore("tabs", {
 
     // === File operations using backend commands ===
     async openFileFromDialog() {
+      if (isWeb) {
+        // In web environment, show a message that file operations are not available
+        alert("File operations are not available in the web version. Please download the desktop app for full functionality.");
+        return;
+      }
+
       try {
         const results = await invoke<Array<{
           path: string;
@@ -232,6 +255,12 @@ export const useTabsStore = defineStore("tabs", {
     },
 
     async openSpecificFile(path: string) {
+      if (isWeb) {
+        // In web environment, show a message that file operations are not available
+        alert("File operations are not available in the web version. Please download the desktop app for full functionality.");
+        return;
+      }
+
       try {
         // 如果已經有這個檔案的分頁，直接切換
         const existingTab = this.tabs.find((tab) => tab.path === path);
@@ -275,6 +304,12 @@ export const useTabsStore = defineStore("tabs", {
         return this.saveActiveFileAs();
       }
 
+      if (isWeb) {
+        // In web environment, just mark as saved
+        activeTab.isUnsaved = false;
+        return true;
+      }
+
       try {
         await invoke("save_file", {
           path: activeTab.path,
@@ -292,6 +327,23 @@ export const useTabsStore = defineStore("tabs", {
     async saveActiveFileAs(): Promise<boolean> {
       const activeTab = this.tabs.find((tab) => tab.id === this.activeTabId);
       if (!activeTab) return false;
+
+      if (isWeb) {
+        // In web environment, create a download link
+        const blob = new Blob([activeTab.content], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = activeTab.name || 'untitled.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        // Mark as saved
+        activeTab.isUnsaved = false;
+        return true;
+      }
 
       const settingsStore = useSettingsStore();
 
@@ -316,6 +368,11 @@ export const useTabsStore = defineStore("tabs", {
 
     // === Menu event listeners ===
     setup_menu_listeners() {
+      if (isWeb) {
+        // Skip menu listeners in web environment
+        return;
+      }
+
       // Listen for shortcut-new-note event from backend
       listen("shortcut-new-note", () => {
         this.createTab();

@@ -12,6 +12,9 @@ const isSettingsOpen = ref(false);
 const settingsStore = useSettingsStore();
 const tabsStore = useTabsStore();
 
+// Check if we're running in a web environment
+const isWeb = typeof window !== 'undefined' && !window.__TAURI__;
+
 // Watch for theme changes and apply them to the body element
 watchEffect(() => {
   document.body.dataset.theme = settingsStore.theme;
@@ -21,11 +24,13 @@ watchEffect(() => {
 onMounted(() => {
   tabsStore.setup_menu_listeners();
   
-  // Listen for menu events from native menu and system tray
-  listen("menu-event", (event) => {
-    const menuId = event.payload as string;
-    handleMenuEvent(menuId);
-  });
+  // Listen for menu events from native menu and system tray (Tauri only)
+  if (!isWeb) {
+    listen("menu-event", (event) => {
+      const menuId = event.payload as string;
+      handleMenuEvent(menuId);
+    });
+  }
 });
 
 const handleMenuEvent = (menuId: string) => {

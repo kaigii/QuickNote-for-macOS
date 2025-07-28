@@ -7,6 +7,9 @@ import { invoke } from "@tauri-apps/api/tauri";
 const { t, i18next } = useTranslation();
 const settingsStore = useSettingsStore();
 
+// Check if we're running in a web environment
+const isWeb = typeof window !== 'undefined' && !window.__TAURI__;
+
 // Local state for form values
 const localTheme = ref<Theme>("light");
 const localLanguage = ref("en");
@@ -67,7 +70,11 @@ const saveSettings = async () => {
     settingsStore.newNoteShortcut = getShortcutString(localShortcutKeys.value);
     settingsStore.closeTabShortcut = getShortcutString(localCloseTabShortcutKeys.value);
     settingsStore.toggleWindowShortcut = getShortcutString(localToggleWindowShortcutKeys.value);
-    await settingsStore.save_all_settings();
+    
+    if (!isWeb) {
+      await settingsStore.save_all_settings();
+    }
+    
     if (localLanguage.value !== i18next.language) {
       i18next.changeLanguage(localLanguage.value);
     }
@@ -80,7 +87,19 @@ const saveSettings = async () => {
 
 const resetToDefaults = async () => {
   try {
-    await settingsStore.reset_settings();
+    if (!isWeb) {
+      await settingsStore.reset_settings();
+    } else {
+      // In web environment, just reset the local state
+      settingsStore.theme = "light";
+      settingsStore.language = "en";
+      settingsStore.defaultFormat = "txt";
+      settingsStore.defaultPath = null;
+      settingsStore.newNoteShortcut = "CmdOrCtrl+Option+T";
+      settingsStore.closeTabShortcut = "CmdOrCtrl+Option+Y";
+      settingsStore.toggleWindowShortcut = "CmdOrCtrl+Option+U";
+    }
+    
     localTheme.value = settingsStore.theme;
     localLanguage.value = settingsStore.language;
     localDefaultFormat.value = settingsStore.defaultFormat;
@@ -99,6 +118,12 @@ const resetToDefaults = async () => {
 };
 
 const browsePath = async () => {
+  if (isWeb) {
+    // In web environment, show a message that file operations are not available
+    alert("File operations are not available in the web version. Please download the desktop app for full functionality.");
+    return;
+  }
+
   try {
     const selectedPath = await invoke<string | null>("select_directory");
     if (selectedPath) {
