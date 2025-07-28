@@ -72,7 +72,7 @@ QuickNote 不僅是另一個文字編輯器。它被精心打造，旨在成為�
 
 **一鍵安裝**
 ```bash
-curl -L -o QuickNote_0.1.0_aarch64.dmg "https://github.com/kaigii/QuickNote-for-macOS/releases/latest/download/QuickNote_0.1.0_aarch64.dmg" && sudo xattr -rd com.apple.quarantine QuickNote_0.1.0_aarch64.dmg && open QuickNote_0.1.0_aarch64.dmg
+curl -L -o QuickNote.dmg "https://github.com/kaigii/QuickNote-for-macOS/releases/latest/download/QuickNote_0.1.0_aarch64.dmg" && sudo xattr -rd com.apple.quarantine QuickNote.dmg && open QuickNote.dmg
 ```
 
 **然後手動安裝：**

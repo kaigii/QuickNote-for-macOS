@@ -78,7 +78,7 @@ Or visit the [Releases page for all versions](https://github.com/kaigii/QuickNot
 
 **One-Command Installation**
 ```bash
-curl -L -o QuickNote_0.1.0_aarch64.dmg "https://github.com/kaigii/QuickNote-for-macOS/releases/latest/download/QuickNote_0.1.0_aarch64.dmg" && sudo xattr -rd com.apple.quarantine QuickNote_0.1.0_aarch64.dmg && open QuickNote_0.1.0_aarch64.dmg
+curl -L -o QuickNote.dmg "https://github.com/kaigii/QuickNote-for-macOS/releases/latest/download/QuickNote_0.1.0_aarch64.dmg" && sudo xattr -rd com.apple.quarantine QuickNote.dmg && open QuickNote.dmg
 ```
 
 **Then manually install:**
