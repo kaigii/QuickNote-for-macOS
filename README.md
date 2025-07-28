@@ -68,13 +68,13 @@ QuickNote isn't just another text editor. It's meticulously crafted to be an ext
 | **State** | ![Pinia](https://img.shields.io/badge/Pinia-FFD700?logo=pinia&logoColor=black)                                                                                                                                |
 | **Build** | ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)                                                                                                                                    |
 
-## 📦 Download
+## 📦 Download & Install
+
+### 🚀 For Users
 
 [⬇️ Download for macOS (.dmg)](https://github.com/kaigii/QuickNote-for-macOS/releases/tag/v0.1.0)
 
 Or visit the [Releases page for all versions](https://github.com/kaigii/QuickNote-for-macOS/releases)
-
-### 🚀 Quick Installation
 
 **One-Command Installation**
 ```bash
@@ -92,6 +92,8 @@ curl -L -o QuickNote.dmg "https://github.com/kaigii/QuickNote-for-macOS/releases
 
 
 ---
+
+### 🛠️ For Developers
 
 ## 📦 Getting Started
 

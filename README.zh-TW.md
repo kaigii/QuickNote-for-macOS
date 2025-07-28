@@ -62,13 +62,13 @@ QuickNote 不僅是另一個文字編輯器。它被精心打造，旨在成為�
 | **狀態管理** | ![Pinia](https://img.shields.io/badge/Pinia-FFD700?logo=pinia&logoColor=black)                                                                                                                                 |
 | **建置工具** | ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)                                                                                                                                     |
 
-## 📦 下載
+## 📦 下載與安裝
+
+### 🚀 一般使用者
 
 [⬇️ 下載 macOS 版本 (.dmg)](https://github.com/kaigii/QuickNote-for-macOS/releases/tag/v0.1.0)
 
 或前往 [所有版本下載頁](https://github.com/kaigii/QuickNote-for-macOS/releases)
-
-### 🚀 快速安裝
 
 **一鍵安裝**
 ```bash
@@ -86,6 +86,8 @@ curl -L -o QuickNote.dmg "https://github.com/kaigii/QuickNote-for-macOS/releases
 
 
 ---
+
+### 🛠️ 開發者
 
 ## 📦 開始使用
 
