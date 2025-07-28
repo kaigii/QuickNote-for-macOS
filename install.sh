@@ -6,45 +6,29 @@
 echo "🚀 QuickNote One-Click Installation"
 echo "===================================="
 
-# Find DMG file
+# Check if DMG file exists in current directory
 DMG_FILE="QuickNote_0.1.0_aarch64.dmg"
-FOUND_FILE=""
 
-# Check common locations
-for path in "." "$HOME/Downloads" "$HOME/Desktop" "$HOME/Downloads/QuickNote*" "$HOME/Desktop/QuickNote*"; do
-    if [ -f "$path/$DMG_FILE" ]; then
-        FOUND_FILE="$path/$DMG_FILE"
-        break
-    fi
-done
-
-# If not found, search the entire Downloads folder
-if [ -z "$FOUND_FILE" ]; then
-    echo "🔍 Searching for DMG file..."
-    FOUND_FILE=$(find "$HOME/Downloads" -name "*QuickNote*.dmg" 2>/dev/null | head -1)
+if [ ! -f "$DMG_FILE" ]; then
+    echo "❌ QuickNote DMG file not found in current directory"
+    echo ""
+    echo "📥 Please follow these steps:"
+    echo "1. Go to GitHub Releases: https://github.com/kaigii/QuickNote-for-macOS/releases"
+    echo "2. Download QuickNote_0.1.0_aarch64.dmg"
+    echo "3. Save it to this directory (where install.sh is located)"
+    echo "4. Run this script again: ./install.sh"
+    echo ""
+    echo "💡 Or if you already downloaded it elsewhere, move it here:"
+    echo "   mv ~/Downloads/QuickNote_0.1.0_aarch64.dmg ."
+    echo ""
+    exit 1
 fi
 
-if [ -z "$FOUND_FILE" ]; then
-    echo "❌ QuickNote DMG file not found"
-    echo ""
-    echo "Please ensure QuickNote_0.1.0_aarch64.dmg is downloaded to one of these locations:"
-    echo "- Current folder"
-    echo "- Downloads folder (~/Downloads)"
-    echo "- Desktop (~/Desktop)"
-    echo ""
-    echo "Or manually specify the file path:"
-    read -p "DMG file path: " FOUND_FILE
-    if [ ! -f "$FOUND_FILE" ]; then
-        echo "❌ File does not exist"
-        exit 1
-    fi
-fi
-
-echo "📦 Found file: $FOUND_FILE"
+echo "📦 Found DMG file: $DMG_FILE"
 
 # Remove quarantine attributes
 echo "🔓 Removing security quarantine..."
-if sudo xattr -rd com.apple.quarantine "$FOUND_FILE" 2>/dev/null; then
+if sudo xattr -rd com.apple.quarantine "$DMG_FILE" 2>/dev/null; then
     echo "✅ Security quarantine removed"
 else
     echo "⚠️  Security quarantine processing completed"
@@ -52,7 +36,7 @@ fi
 
 # Mount DMG
 echo "📂 Mounting DMG..."
-if hdiutil attach "$FOUND_FILE" >/dev/null 2>&1; then
+if hdiutil attach "$DMG_FILE" >/dev/null 2>&1; then
     echo "✅ DMG mounted"
     
     # Copy to Applications

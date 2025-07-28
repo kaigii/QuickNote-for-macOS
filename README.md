@@ -80,21 +80,25 @@ Since this is an unsigned application, macOS may block the installation. If you 
 
 #### 🚀 Quick Installation (Recommended)
 
-**Option 1: One-Click Install (Easiest)**
+**Step 1: Download Files**
+1. Download `QuickNote_0.1.0_aarch64.dmg` from [GitHub Releases](https://github.com/kaigii/QuickNote-for-macOS/releases)
+2. Download `install.sh` from this repository
+3. Save both files to the same directory
+
+**Step 2: Install**
 ```bash
 chmod +x install.sh
 ./install.sh
 ```
 
 **What the script does automatically:**
-- ✅ Find DMG file
 - ✅ Remove security quarantine
 - ✅ Mount DMG
 - ✅ Install to Applications
 - ✅ Clean up temporary files
 
 **Option 2: Manual Command**
-1. Download the DMG file from GitHub
+1. Download the DMG file from [GitHub Releases](https://github.com/kaigii/QuickNote-for-macOS/releases)
 2. Open Terminal and run this command (replace the path if needed):
    ```bash
    sudo xattr -rd com.apple.quarantine /path/to/QuickNote_0.1.0_aarch64.dmg
