@@ -39,10 +39,11 @@ const trafficLightSvg = (
   type: "close" | "minimize" | "maximize",
   state: "normal" | "hover" | "press",
 ) => {
+  const basePath = isWeb ? "/QuickNote-for-macOS" : "";
   if (type === "minimize" || type === "maximize") {
-    return "/traffic-lights/all-three-nofocus.svg";
+    return `${basePath}/traffic-lights/all-three-nofocus.svg`;
   }
-  return `/traffic-lights/${type}-${state}.svg`;
+  return `${basePath}/traffic-lights/${type}-${state}.svg`;
 };
 
 // Only close (red) button has click handler; minimize and maximize are UI only
@@ -124,7 +125,7 @@ const openSettings = () => {
     <div class="top-drag-handle" data-tauri-drag-region>
       <img
         class="drag-indicator"
-        src="/drag-indicator.svg"
+        :src="isWeb ? '/QuickNote-for-macOS/drag-indicator.svg' : '/drag-indicator.svg'"
         alt="drag indicator"
       />
     </div>
