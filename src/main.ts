@@ -17,8 +17,8 @@ async function main() {
   
   if (!isWeb) {
     // Initialize settings from the backend before mounting the app (Tauri only)
-    const settingsStore = useSettingsStore();
-    await settingsStore.initialize_settings();
+  const settingsStore = useSettingsStore();
+  await settingsStore.initialize_settings();
   }
 
   app.mount("#app");

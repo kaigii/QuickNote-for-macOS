@@ -72,19 +72,19 @@ QuickNote isn't just another text editor. It's meticulously crafted to be an ext
 
 ### 🚀 For Users
 
-[⬇️ Download for macOS (.dmg)](https://github.com/kaigii/QuickNote-for-macOS/releases/tag/v0.1.0)
+[⬇️ Download for macOS (.dmg)](https://github.com/kaigiii/QuickNote-for-macOS/releases/tag/v0.1.0)
 
-Or visit the [Releases page for all versions](https://github.com/kaigii/QuickNote-for-macOS/releases)
+Or visit the [Releases page for all versions](https://github.com/kaigiii/QuickNote-for-macOS/releases)
 
 ### 🌐 Web Version
 
-Visit our [web version](https://kaigii.github.io/QuickNote-for-macOS/) to try QuickNote in your browser!
+Visit our [web version](https://kaigiii.github.io/QuickNote-for-macOS/) to try QuickNote in your browser!
 
 **Note:** The web version is a demonstration of the interface. For the full desktop experience with all features, please download the macOS app.
 
 **Option 1: One-Command Installation (Recommended)**
 ```bash
-curl -L -o QuickNote.dmg "https://github.com/kaigii/QuickNote-for-macOS/releases/latest/download/QuickNote_0.1.0_aarch64.dmg" && sudo xattr -rd com.apple.quarantine QuickNote.dmg && open QuickNote.dmg
+curl -L -o QuickNote.dmg "https://github.com/kaigiii/QuickNote-for-macOS/releases/latest/download/QuickNote_0.1.0_aarch64.dmg" && sudo xattr -rd com.apple.quarantine QuickNote.dmg && open QuickNote.dmg
 ```
 
 **Option 2: Manual Download & Install**
@@ -116,7 +116,7 @@ curl -L -o QuickNote.dmg "https://github.com/kaigii/QuickNote-for-macOS/releases
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/kaigii/QuickNote-for-macOS.git
+    git clone https://github.com/kaigiii/QuickNote-for-macOS.git
     cd QuickNote-for-macOS
     ```
 

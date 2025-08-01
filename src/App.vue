@@ -26,10 +26,10 @@ onMounted(() => {
   
   // Listen for menu events from native menu and system tray (Tauri only)
   if (!isWeb) {
-    listen("menu-event", (event) => {
-      const menuId = event.payload as string;
-      handleMenuEvent(menuId);
-    });
+  listen("menu-event", (event) => {
+    const menuId = event.payload as string;
+    handleMenuEvent(menuId);
+  });
   }
 });
 

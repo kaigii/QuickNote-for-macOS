@@ -45,7 +45,7 @@
   "bundle": {
     "active": true,
     "targets": "all",
-    "identifier": "com.kaigii.quicknote",
+          "identifier": "com.kaigiii.quicknote",
     "icon": [
         "icons/512x512.png"
     ],

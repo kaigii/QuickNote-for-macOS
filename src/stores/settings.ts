@@ -151,7 +151,7 @@ export const useSettingsStore = defineStore("settings", {
       this.toggleWindowShortcut = "CmdOrCtrl+Option+U";
 
       if (!isWeb) {
-        await this.save_all_settings();
+      await this.save_all_settings();
       }
     },
   },

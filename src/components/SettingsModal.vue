@@ -72,7 +72,7 @@ const saveSettings = async () => {
     settingsStore.toggleWindowShortcut = getShortcutString(localToggleWindowShortcutKeys.value);
     
     if (!isWeb) {
-      await settingsStore.save_all_settings();
+    await settingsStore.save_all_settings();
     }
     
     if (localLanguage.value !== i18next.language) {
@@ -88,7 +88,7 @@ const saveSettings = async () => {
 const resetToDefaults = async () => {
   try {
     if (!isWeb) {
-      await settingsStore.reset_settings();
+    await settingsStore.reset_settings();
     } else {
       // In web environment, just reset the local state
       settingsStore.theme = "light";

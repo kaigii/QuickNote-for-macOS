@@ -66,13 +66,13 @@ QuickNote 不僅是另一個文字編輯器。它被精心打造，旨在成為�
 
 ### 🚀 一般使用者
 
-[⬇️ 下載 macOS 版本 (.dmg)](https://github.com/kaigii/QuickNote-for-macOS/releases/tag/v0.1.0)
+[⬇️ 下載 macOS 版本 (.dmg)](https://github.com/kaigiii/QuickNote-for-macOS/releases/tag/v0.1.0)
 
-或前往 [所有版本下載頁](https://github.com/kaigii/QuickNote-for-macOS/releases)
+或前往 [所有版本下載頁](https://github.com/kaigiii/QuickNote-for-macOS/releases)
 
 **選項 1：一鍵安裝（推薦）**
 ```bash
-curl -L -o QuickNote.dmg "https://github.com/kaigii/QuickNote-for-macOS/releases/latest/download/QuickNote_0.1.0_aarch64.dmg" && sudo xattr -rd com.apple.quarantine QuickNote.dmg && open QuickNote.dmg
+curl -L -o QuickNote.dmg "https://github.com/kaigiii/QuickNote-for-macOS/releases/latest/download/QuickNote_0.1.0_aarch64.dmg" && sudo xattr -rd com.apple.quarantine QuickNote.dmg && open QuickNote.dmg
 ```
 
 **選項 2：手動下載與安裝**
@@ -104,7 +104,7 @@ curl -L -o QuickNote.dmg "https://github.com/kaigii/QuickNote-for-macOS/releases
 
 1.  **複製專案倉庫：**
     ```bash
-    git clone https://github.com/kaigii/QuickNote-for-macOS.git
+    git clone https://github.com/kaigiii/QuickNote-for-macOS.git
     cd QuickNote-for-macOS
     ```
 

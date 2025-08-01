@@ -104,8 +104,8 @@ export const useTabsStore = defineStore("tabs", {
 
       // Show and focus window when a new tab is created (Tauri only)
       if (!isWeb) {
-        await appWindow.show();
-        await appWindow.setFocus();
+      await appWindow.show();
+      await appWindow.setFocus();
       }
     },
 
@@ -132,18 +132,18 @@ export const useTabsStore = defineStore("tabs", {
           }
         } else {
           // In Tauri environment, use native dialog
-          const result = await ask(`"${tabToClose.name}" has unsaved changes.`, {
-            title: "Unsaved Changes",
-            type: "warning",
-            okLabel: "Save",
-            cancelLabel: "Don't Save", // This will return `false`
-          });
+        const result = await ask(`"${tabToClose.name}" has unsaved changes.`, {
+          title: "Unsaved Changes",
+          type: "warning",
+          okLabel: "Save",
+          cancelLabel: "Don't Save", // This will return `false`
+        });
 
-          if (result) {
-            // User clicked "Save", result is true
-            const savedSuccessfully = await this.saveActiveFile();
-            if (!savedSuccessfully) {
-              return; // User cancelled the save dialog, so we abort closing the tab
+        if (result) {
+          // User clicked "Save", result is true
+          const savedSuccessfully = await this.saveActiveFile();
+          if (!savedSuccessfully) {
+            return; // User cancelled the save dialog, so we abort closing the tab
             }
           }
         }

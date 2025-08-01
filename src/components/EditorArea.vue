@@ -45,11 +45,11 @@ const syncScroll = () => {
 onMounted(async () => {
   // Listen for the custom file drop event from the Rust backend (Tauri only)
   if (!isWeb) {
-    unlisten = await listen<string[]>("custom-file-drop", (event) => {
-      for (const filePath of event.payload) {
-        tabsStore.openSpecificFile(filePath);
-      }
-    });
+  unlisten = await listen<string[]>("custom-file-drop", (event) => {
+    for (const filePath of event.payload) {
+      tabsStore.openSpecificFile(filePath);
+    }
+  });
   }
 });
 
