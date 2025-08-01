@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, nextTick, computed } from "vue";
+import { onMounted, ref, nextTick } from "vue";
 import { useTabsStore, type Tab } from "../stores/tabs";
 import Sortable from "sortablejs";
 import { appWindow } from "@tauri-apps/api/window";
