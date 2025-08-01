@@ -15,8 +15,7 @@ const tabsContainer = ref<HTMLDivElement | null>(null);
 const editingTabId = ref<string | null>(null);
 const originalName = ref("");
 
-// macOS detection for traffic light UI
-const isMac = computed(() => navigator.userAgent.includes("Macintosh"));
+
 
 // State for traffic light button hover/press
 const closeState = ref<"normal" | "hover" | "press">("normal");
