@@ -56,6 +56,18 @@ const handleClose = () => {
   }
 };
 
+const handleMinimize = () => {
+  if (isWeb) {
+    alert("This is a web demo. Please download the desktop app for full functionality.");
+  }
+};
+
+const handleMaximize = () => {
+  if (isWeb) {
+    alert("This is a web demo. Please download the desktop app for full functionality.");
+  }
+};
+
 // Emit events for parent communication
 const emit = defineEmits<{
   "open-settings": [];
@@ -118,7 +130,6 @@ const openSettings = () => {
       />
     </div>
     <div
-      v-if="isMac"
       class="traffic-light-group"
       @mouseenter="setAllHover"
       @mouseleave="setAllNormal"
@@ -142,6 +153,7 @@ const openSettings = () => {
         }"
         @mousedown="minimizeState = 'press'"
         @mouseup="minimizeState = 'hover'"
+        @click="handleMinimize"
         tabindex="-1"
         role="button"
         aria-label="Minimize"
@@ -153,6 +165,7 @@ const openSettings = () => {
         }"
         @mousedown="maximizeState = 'press'"
         @mouseup="maximizeState = 'hover'"
+        @click="handleMaximize"
         tabindex="-1"
         role="button"
         aria-label="Maximize"
